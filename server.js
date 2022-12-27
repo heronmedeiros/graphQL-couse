@@ -1,10 +1,15 @@
 'use strict';
 
-const express = require('express');
+const express        = require('express');
+// const expressGraphQL = require('express-graphql');
+var { graphqlHTTP } = require('express-graphql');
+
 const app = express();
 
 
-
+app.use('/graphql', graphqlHTTP({
+    graphiql: true
+}));
 
 
 app.listen(4000, () => {
