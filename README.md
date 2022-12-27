@@ -6,7 +6,7 @@ npm install
 ```
 2. To Run:
 ```bash
-npm run-script run
+npm run server
 ```
 
 3. Open the browser and go to
