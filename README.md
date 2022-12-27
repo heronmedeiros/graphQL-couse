@@ -1,4 +1,4 @@
-#GraphQL Example
+# GraphQL Example
 
 1. Install the dependencies:
 ```bash
