@@ -9,7 +9,12 @@ npm install
 npm run server
 ```
 
-3. Open the browser and go to
+3. To Run database:
+```bash
+npm run json:server
+```
+
+4. Open the browser and go to
 ```
 localhost:4000/graphsql
 ```
@@ -21,8 +26,9 @@ localhost:4000/graphsql
     id,
     firstName,
     age
-  }  
+  }
 }
+
 ```
 
 Is expected to return this:
@@ -36,6 +42,43 @@ Is expected to return this:
       "age": 20
     }
   }
+}
+```
+
+5. Other type of queries
+```javascript
+
+query findUser{
+  Bill: user(id: "23"){
+    id
+    firstName
+    age
+    company{
+      id
+      name
+    }
+  }
+
+  Apple: company(id: "1"){
+		...companyDetails
+    users {
+      firstName
+    }
+  }
+
+  Google: company(id: "2"){
+		...companyDetails
+    users {
+      firstName
+    }
+  }
+}
+
+
+fragment companyDetails on Company {
+  id
+  name
+  description
 }
 ```
 
