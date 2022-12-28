@@ -91,5 +91,16 @@ mutation {
     firstName
     age
   }
+
+  mutation {
+  editUser(id: "xG25gMu", firstName: "Rafael", age: 34){
+  	id
+    firstName
+    age
+	}
+  deleteUser(id: "1"){
+    id
+  }
+}
 }
 ```
